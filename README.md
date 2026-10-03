@@ -14,7 +14,7 @@ A complete, self-contained setup repository to automatically bootstrap, install,
 Clone this repository and run the installer:
 
 ```bash
-git clone https://github.com/<your-username>/oh-my-zsh-setup.git
+git clone https://github.com/Santiagus/oh-my-zsh-setup.git
 cd oh-my-zsh-setup
 ./install.sh
 ```
