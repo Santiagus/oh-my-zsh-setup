@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS-lightgrey.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-green.svg)]()
 
-A complete, self-contained setup repository to automatically bootstrap, install, and configure Oh My Zsh and the custom **Soliah** theme on any fresh Linux or macOS machine with a single command.
+A complete, self-contained setup repository to automatically bootstrap, install, and configure Oh My Zsh and the custom **santiagus** theme on any fresh Linux or macOS machine with a single command.
 
 ---
 
@@ -46,17 +46,17 @@ Running `./install.sh` automatically performs the following steps in sequence:
    - Checks if `~/.oh-my-zsh` already exists.
    - If not installed, downloads and runs the official Oh My Zsh installer in **unattended mode** (`--unattended --keep-zshrc`), preventing terminal prompts or subshell interruptions during setup.
 
-4. **Custom Theme Deployment (`Soliah`)**
-   - Copies `themes/Soliah.zsh-theme` to:
+4. **Custom Theme Deployment (`santiagus`)**
+   - Copies `themes/santiagus.zsh-theme` to:
      ```
-     ~/.oh-my-zsh/custom/themes/Soliah.zsh-theme
+     ~/.oh-my-zsh/custom/themes/santiagus.zsh-theme
      ```
    - Using the `custom/` directory ensures upstream Oh My Zsh updates will never overwrite or erase your theme.
 
 5. **Safe In-Place `~/.zshrc` Configuration**
    - Locates existing `ZSH_THEME` declarations in `~/.zshrc`.
    - Comments out the active theme (e.g. `# ZSH_THEME="robbyrussell"`).
-   - Injects `ZSH_THEME="Soliah"` directly in place.
+   - Injects `ZSH_THEME="santiagus"` directly in place.
    - Completely preserves all other contents, comments, plugins, aliases, and environment variables.
    - Idempotent: safe to run multiple times without duplicating entries.
 
@@ -66,9 +66,9 @@ Running `./install.sh` automatically performs the following steps in sequence:
 
 ---
 
-## 🎨 About the `Soliah` Theme
+## 🎨 About the `santiagus` Theme
 
-The **Soliah** theme provides a clean two-line prompt loaded with context:
+The **santiagus** theme is a heavily enhanced custom prompt (originally evolved from the classic Soliah theme), offering a high-density, clean two-line prompt loaded with developer context:
 
 ```text
 (venv) [19:54] (user@hostname) ~/projects/my-repo (12m|a1b2c3d|main*|↑1) $
@@ -102,7 +102,7 @@ The **Soliah** theme provides a clean two-line prompt loaded with context:
 oh-my-zsh-setup/
 ├── install.sh               # Main self-contained setup script (executable)
 ├── themes/
-│   └── Soliah.zsh-theme     # Custom Oh My Zsh theme
+│   └── santiagus.zsh-theme  # Custom Oh My Zsh theme
 ├── .gitignore               # Git ignore rules for backups & temporary files
 └── README.md                # Documentation & usage instructions
 ```

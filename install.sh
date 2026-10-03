@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ==============================================================================
-# Oh My Zsh Setup & Custom Soliah Theme Installer
+# Oh My Zsh Setup & Custom santiagus Theme Installer
 # Supports: Linux (Ubuntu/Debian, Fedora/RHEL, Arch, Alpine) & macOS
 # ==============================================================================
 set -euo pipefail
@@ -160,20 +160,20 @@ install_oh_my_zsh() {
 }
 
 # ------------------------------------------------------------------------------
-# 4. Deploy Custom Soliah Theme
+# 4. Deploy Custom santiagus Theme
 # ------------------------------------------------------------------------------
 deploy_theme() {
   local custom_dir="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
   local target_dir="${custom_dir}/themes"
-  local source_theme="${SCRIPT_DIR}/themes/Soliah.zsh-theme"
-  local target_theme="${target_dir}/Soliah.zsh-theme"
+  local source_theme="${SCRIPT_DIR}/themes/santiagus.zsh-theme"
+  local target_theme="${target_dir}/santiagus.zsh-theme"
 
   if [ ! -f "$source_theme" ]; then
     log_error "Custom theme not found at ${source_theme}!"
     exit 1
   fi
 
-  log_info "Deploying custom Soliah theme to ${target_theme}..."
+  log_info "Deploying custom santiagus theme to ${target_theme}..."
   mkdir -p "$target_dir"
   cp "$source_theme" "$target_theme"
   log_success "Theme deployed to Oh My Zsh custom themes directory."
@@ -184,7 +184,7 @@ deploy_theme() {
 # ------------------------------------------------------------------------------
 configure_theme() {
   local zshrc="$HOME/.zshrc"
-  log_info "Configuring ZSH_THEME=\"Soliah\" in ${zshrc}..."
+  log_info "Configuring ZSH_THEME=\"santiagus\" in ${zshrc}..."
 
   local tmp_file
   tmp_file="$(mktemp "${zshrc}.tmp.XXXXXX")"
@@ -192,18 +192,18 @@ configure_theme() {
   awk '
   BEGIN {
       theme_inserted = 0
-      already_soliah = 0
+      already_santiagus = 0
   }
-  # If already set to Soliah (uncommented), keep it as is
-  /^[[:space:]]*ZSH_THEME=["'\''"]Soliah["'\''"]/ {
-      already_soliah = 1
+  # If already set to santiagus (uncommented), keep it as is
+  /^[[:space:]]*ZSH_THEME=["'\''"]santiagus["'\''"]/ {
+      already_santiagus = 1
       print $0
       next
   }
-  # Comment any active (uncommented) ZSH_THEME line and set Soliah
+  # Comment any active (uncommented) ZSH_THEME line and set santiagus
   /^[[:space:]]*ZSH_THEME=/ {
-      if (!already_soliah && !theme_inserted) {
-          print "ZSH_THEME=\"Soliah\""
+      if (!already_santiagus && !theme_inserted) {
+          print "ZSH_THEME=\"santiagus\""
           theme_inserted = 1
       }
       print "# " $0
@@ -215,14 +215,14 @@ configure_theme() {
   }
   END {
       # If no ZSH_THEME declaration was present, add it at the end
-      if (!already_soliah && !theme_inserted) {
-          print "ZSH_THEME=\"Soliah\""
+      if (!already_santiagus && !theme_inserted) {
+          print "ZSH_THEME=\"santiagus\""
       }
   }
   ' "$zshrc" > "$tmp_file"
 
   mv "$tmp_file" "$zshrc"
-  log_success "Theme configured: ZSH_THEME=\"Soliah\""
+  log_success "Theme configured: ZSH_THEME=\"santiagus\""
 }
 
 # ------------------------------------------------------------------------------
@@ -279,7 +279,7 @@ set_default_shell() {
 # ------------------------------------------------------------------------------
 main() {
   printf "${BOLD}${GREEN}====================================================${RESET}\n"
-  printf "${BOLD}${GREEN}        Oh My Zsh & Soliah Theme Setup              ${RESET}\n"
+  printf "${BOLD}${GREEN}        Oh My Zsh & santiagus Theme Setup           ${RESET}\n"
   printf "${BOLD}${GREEN}====================================================${RESET}\n\n"
 
   ensure_dependencies
