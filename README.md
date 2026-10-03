@@ -68,7 +68,7 @@ Running `./install.sh` automatically performs the following steps in sequence:
 
 ## 🎨 About the `santiagus` Theme
 
-The **santiagus** theme is a heavily enhanced custom prompt (originally evolved from the classic Soliah theme), offering a high-density, clean two-line prompt loaded with developer context:
+The **santiagus** theme is a heavily enhanced custom prompt (originally evolved from the classic Soliah theme), offering a high-density, clean prompt loaded with developer context:
 
 ```text
 (venv) [19:54] (user@hostname) ~/projects/my-repo (12m|a1b2c3d|main*|↑1) $
@@ -135,4 +135,4 @@ source ~/.zshrc
 
 ## 📄 License
 
-This repository is licensed under the [MIT License](LICENSE) (or choose your preferred license).
+This repository is licensed under the [MIT License](LICENSE).
